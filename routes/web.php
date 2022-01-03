@@ -30,6 +30,7 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
 Auth::routes();
+
 // ADMIN
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
