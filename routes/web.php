@@ -31,12 +31,14 @@ Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->nam
 
 Auth::routes();
 // ADMIN
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/kategori', KategoriController::class);
-Route::resource('/artikel', ArtikelController::class);
-Route::resource('/playlist', PlaylistController::class);
-Route::resource('/materi', MateriController::class);
-Route::resource('/slide', SlideController::class);
-Route::resource('/iklan', IklanController::class);
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/kategori', KategoriController::class);
+    Route::resource('/artikel', ArtikelController::class);
+    Route::resource('/playlist', PlaylistController::class);
+    Route::resource('/materi', MateriController::class);
+    Route::resource('/slide', SlideController::class);
+    Route::resource('/iklan', IklanController::class);
+});
 // ADMIN
 
