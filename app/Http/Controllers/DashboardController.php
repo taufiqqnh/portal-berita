@@ -8,7 +8,6 @@ use App\Models\Artikel;
 use App\Models\Kategori;
 use App\Models\Playlist;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class DashboardController extends Controller
 {
@@ -28,7 +27,6 @@ class DashboardController extends Controller
         $playlistvideo = Playlist::orderBy('created_at', 'DESC')->limit('2')->get();
         $materivideo = Materi::orderBy('created_at', 'DESC')->limit('2')->get();
 
-        Alert::success('Success', 'Berhasil Login!');
         return view('back.dashboard', 
         compact('kategori','artikel','playlist','users','materi','postterbaru','playlistvideo','materivideo'));
     }
