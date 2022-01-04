@@ -70,3 +70,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.materi').addClass("active");
+</script>
+@endpush

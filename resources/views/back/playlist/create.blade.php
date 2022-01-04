@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <label for="judul_playlist" class="form-label">Judul Playlist Video</label>
                     <input type="text" value="{{old('judul_playlist')}}" name="judul_playlist" id="judul_playlist" placeholder="Enter Judul" class="form-control">
+                    @if ($errors->has('judul_playlist'))
+                    <span class="text-danger">{{ $errors->first('judul_playlist') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="desc" class="form-label">Deskripsi</label>
@@ -50,3 +53,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.playlist').addClass("active");
+</script>
+@endpush

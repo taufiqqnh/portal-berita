@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <label for="judul_iklan" class="form-label">Judul Iklan</label>
                     <input type="text" value="{{old('judul_iklan')}}" name="judul_iklan" id="judul_iklan" class="form-control">
+                    @if ($errors->has('judul_iklan'))
+                    <span class="text-danger">{{ $errors->first('judul_iklan') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="link" class="form-label">Link</label>
@@ -49,3 +52,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.iklan').addClass("active");
+</script>
+@endpush

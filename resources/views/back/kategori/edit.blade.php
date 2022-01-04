@@ -35,3 +35,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.kategori').addClass("active");
+</script>
+@endpush

@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <label for="judul" class="form-label">Judul</label>
                     <input type="text" value="{{old('judul')}}" name="judul" id="judul" class="form-control">
+                    @if ($errors->has('judul'))
+                    <span class="text-danger">{{ $errors->first('judul') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="desc" class="form-label">Deskripsi</label>
@@ -58,3 +61,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.artikel').addClass("active");
+</script>
+@endpush

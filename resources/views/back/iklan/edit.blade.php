@@ -53,3 +53,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.iklan').addClass("active");
+</script>
+@endpush

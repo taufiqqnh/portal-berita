@@ -54,3 +54,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.playlist').addClass("active");
+</script>
+@endpush

@@ -67,3 +67,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.artikel').addClass("active");
+</script>
+@endpush

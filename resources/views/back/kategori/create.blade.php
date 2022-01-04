@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <label for="nama_kategori" class="form-label">Nama Kategori</label>
                     <input type="text" value="{{old('nama_kategori')}}" name="nama_kategori" id="nama_kategori" class="form-control">
+                    @if ($errors->has('nama_kategori'))
+                    <span class="text-danger">{{ $errors->first('nama_kategori') }}</span>
+                    @endif
                 </div>
                 {{-- <div class="form-group">
                     <label for="slug" class="form-label">Slug</label>
@@ -38,3 +41,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.kategori').addClass("active");
+</script>
+@endpush

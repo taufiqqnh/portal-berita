@@ -24,6 +24,9 @@
                 <div class="form-group">
                     <label for="judul_materi" class="form-label">Materi Video</label>
                     <input type="text" value="{{old('judul_materi')}}" name="judul_materi" placeholder="Enter Judul" class="form-control">
+                    @if ($errors->has('judul_materi'))
+                    <span class="text-danger">{{ $errors->first('judul_materi') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="link" class="form-label">Link Video</label>
@@ -62,3 +65,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.materi').addClass("active");
+</script>
+@endpush

@@ -49,3 +49,8 @@
     </div>
 </div>
 @endsection
+@push("script")
+<script>
+      $('.slide').addClass("active");
+</script>
+@endpush
