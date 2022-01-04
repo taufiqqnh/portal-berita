@@ -26,10 +26,10 @@ use App\Http\Controllers\DashboardController;
 // });
 
 // Front End
-Route::middleware(['guest'])->group(function(){
+// Route::middleware(['guest'])->group(function(){
     Route::get('/', [FrontendController::class, 'index']);
     Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
-});
+// });
 Auth::routes();
 
 // ADMIN

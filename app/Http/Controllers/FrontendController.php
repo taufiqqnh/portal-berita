@@ -16,7 +16,7 @@ class FrontendController extends Controller
     {
         $slide = Slide::all();
         $kategori = Kategori::all(); 
-        $artikel = Artikel::orderBy('created_at', 'DESC')->limit('5')->get();
+        $artikel = Artikel::where('is_active','1')->orderBy('created_at', 'DESC')->limit('5')->get();
         $playlist = Playlist::orderBy('created_at', 'DESC')->limit('4')->get(); 
         $materi = Materi::orderBy('created_at', 'DESC')->limit('2')->get();
         $iklanfooter = Iklan::orderBy('created_at', 'DESC')->limit('1')->get(); //Iklan::where('id', '1')->first();
