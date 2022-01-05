@@ -17,21 +17,21 @@
                     <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#profile">
+                                <a href="{{route('profile.index')}}">
                                     <span class="link-collapse">My Profile</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#edit">
+                                <a href="{{route('profile.edit', Auth::user()->id)}}"> 
                                     <span class="link-collapse">Edit Profile</span>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="#settings">
                                     <span class="link-collapse">Settings</span>
                                 </a>
-                            </li>
-                            <li>
+                            </li> --}}
+                            {{-- <li>
                                 <a class="link-collapse" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
@@ -41,7 +41,7 @@
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                      @csrf
                                  </form>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

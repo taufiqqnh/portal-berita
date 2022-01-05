@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EditprofileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/materi', MateriController::class);
     Route::resource('/slide', SlideController::class);
     Route::resource('/iklan', IklanController::class);
+    Route::resource('/profile', EditprofileController::class);
 });
 // ADMIN
 

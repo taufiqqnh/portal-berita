@@ -235,14 +235,14 @@
                                     <div class="avatar-lg"><img src="../back/img/profile.png" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
                                         <h4>{{ Auth::user()->name }}</h4>
-                                        <p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        <p class="text-muted">{{ Auth::user()->email }}</p><a href="{{route('profile.index')}}" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="#">My Balance</a>
+                                {{-- <a class="dropdown-item" href="{{route('profile.index')}}">My Profile</a> --}}
+                                {{-- <a class="dropdown-item" href="#">My Balance</a> --}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
