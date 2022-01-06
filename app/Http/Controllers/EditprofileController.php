@@ -78,10 +78,14 @@ class EditprofileController extends Controller
             // 'password' => ['string', 'min:5', 'required'],
         ]);
 
-        $data = $request->all();
-        $data['name'] = ($request->input('name'));
-        $data['password'] = Hash::make($request->input('password'));
+        $data = $request->except([
+            'password','password_confirmation'
+        ]);
+        
+        if ($request-> filled('password')){
 
+            $data['password'] = Hash::make($request->input('password'));
+        }
         $users = User::findOrFail($id);
         $users->update($data);
 
