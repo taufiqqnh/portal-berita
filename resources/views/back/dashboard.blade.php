@@ -3,11 +3,29 @@
 @section('content')
 
 <div class="panel-header bg-primary-gradient">
-	@if (Session::has('success'))
+	{{-- @if (Session::has('success'))
 	<div class="alert alert-primary">
 		{{Session('success')}}
 	</div>
-	@endif
+	@endif --}}	
+        @if (session('resent'))
+            <div class="alert alert-success" role="alert">
+                Kami sudah mengirimkan link verifikasi ke alamat email anda.
+            </div>
+		@endif
+		
+		@if (auth()->user()->email_verified_at == null)
+		<div class="alert alert-danger" role="alert">
+			Email kamu belum terverifikasi. 
+			<form action="{{ route('verification.resend') }}" method="POST" class="d-inline">
+				@csrf
+				<button type="submit" class="d-inline btn btn-link p-0">
+					Verifikasi
+				</button>.
+			</form>
+		</div>
+		@endif
+
 	<div class="page-inner py-5">
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
@@ -283,6 +301,6 @@
 
 @push("script")
 <script>
-      $('.dashboard').addClass("active");
+     $('.dashboard').addClass("active");
 </script>
 @endpush

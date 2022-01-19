@@ -31,8 +31,10 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/', [FrontendController::class, 'index']);
     Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 });
-Auth::routes();
+// Front End
 
+// Auth::routes();
+Auth::routes(['verify' => true]);
 // ADMIN
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

@@ -86,7 +86,8 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-
+        $user->sendEmailVerificationNotification();
+        
         if ($response = $this->registered($request, $user)) {
             return $response;
         }

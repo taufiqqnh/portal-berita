@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+ 
     /**
      * Display a listing of the resource.
      *
@@ -26,9 +27,9 @@ class DashboardController extends Controller
         $postterbaru = Artikel::orderBy('created_at', 'DESC')->limit('2')->get();
         $playlistvideo = Playlist::orderBy('created_at', 'DESC')->limit('2')->get();
         $materivideo = Materi::orderBy('created_at', 'DESC')->limit('2')->get();
-
+        
         return view('back.dashboard', 
         compact('kategori','artikel','playlist','users','materi','postterbaru','playlistvideo','materivideo'));
     }
-
+    
 }
