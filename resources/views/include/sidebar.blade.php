@@ -113,11 +113,11 @@
                     </div>
                 </li>
 
-                <li class="nav-item playlist">
+                {{-- <li class="nav-item playlist">
                     <a data-toggle="collapse" href="#playlist">
                         <i class="fas fa-video"></i>
                         <p>Playlist</p>
-                        {{-- <span class="caret"></span> --}}
+                        
                     </a>
                     <div class="collapse" id="playlist">
                         <ul class="nav nav-collapse">
@@ -141,7 +141,7 @@
                     <a data-toggle="collapse" href="#materi">
                         <i class="fas fa-film"></i>
                         <p>Materi</p>
-                        {{-- <span class="caret"></span> --}}
+                        
                     </a>
                     <div class="collapse" id="materi">
                         <ul class="nav nav-collapse">
@@ -159,7 +159,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="nav-item slide">
                     <a data-toggle="collapse" href="#slide">

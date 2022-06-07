@@ -1,9 +1,16 @@
 {{-- CKEDITOR --}}
-<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'editor1' );
+    ClassicEditor
+        .create( document.querySelector( '#editor1' ) )
+        .then( editor => {
+        console.log( editor );
+        } )
+        .catch( error => {
+        console.error( error );
+        } );
 </script>
-{{-- CKEDITOR --}}
+{{-- END CKEDITOR --}}
 <script src="{{asset('back/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('back/js/core/popper.min.js')}}"></script>
 <script src="{{asset('back/js/core/bootstrap.min.js')}}"></script>

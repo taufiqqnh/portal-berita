@@ -3,7 +3,8 @@
     <div class="logo-header" data-background-color="blue">
         
         <a href="#" class="logo">
-            <img src="../back/img/logo.svg" alt="navbar brand" class="navbar-brand">
+            <div class="avatar-lg"><img src="../back/img/udb.jpg" alt="image profile"  height="60" width="120"></div>
+            {{-- <img src="../back/img/logo.svg" alt="navbar brand" class="navbar-brand"> --}}
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">

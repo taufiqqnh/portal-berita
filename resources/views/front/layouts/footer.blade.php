@@ -1,5 +1,4 @@
- 
- <!-- Footer -->
+  <!-- Footer -->
  <br>
  <footer class="text-center text-lg-start bg-primary text-light">
     <!-- Section: Links  -->
@@ -11,10 +10,10 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
             <!-- Content -->
               <h6 class="text-uppercase fw-bold mb-4">
-                <i class="fas fa-gem me-3"></i>Portal Berita
+                UDB NEWS
               </h6>
               <p>
-                Portal web adalah situs web yang menyediakan kemampuan tertentu yang dibuat sedemikian rupa mencoba menuruti selera para pengunjungnya. Kemampuan portal yang lebih spesifik adalah penyediaan kandungan informasi yang dapat diakses menggunakan beragam perangkat  
+                Global Enterpreneur University
               </p>
           </div>
           <!-- Grid column -->
@@ -32,7 +31,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="card-body">
-                      <h6 class="card-title">{{$row->judul}}</h6>
+                      <h6 class="card-title">{{ Str::limit(strip_tags($row->judul), 20) }}</h6>
                       {{-- <p class="card-text"><small class="text-muted">{{$row->users->name}}</small></p> --}}
                     </div>
                   </div>
@@ -65,8 +64,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-3" >
-      © 2021 Copyright :
-      <a class="text-reset fw-bold" href="https://instagram.com/taufiqqnh_" target="__blank">Taufiq NurHidayat</a>
+      © 2022 Copyright :
+      <a class="text-reset fw-bold" href="#" target="__blank">Taufiq, Irvani & Mega</a>
     </div>
     <!-- Copyright -->
   </footer>

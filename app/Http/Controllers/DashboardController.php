@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Iklan;
+use App\Models\Slide;
 use App\Models\Materi;
 use App\Models\Artikel;
 use App\Models\Kategori;
@@ -24,12 +26,11 @@ class DashboardController extends Controller
         $playlist = Playlist::all(); 
         $users = User::all();
         $materi = Materi::all();
-        $postterbaru = Artikel::orderBy('created_at', 'DESC')->limit('2')->get();
+        $postterbaru = Artikel::orderBy('created_at', 'DESC')->limit('1')->get();
         $playlistvideo = Playlist::orderBy('created_at', 'DESC')->limit('2')->get();
         $materivideo = Materi::orderBy('created_at', 'DESC')->limit('2')->get();
         
         return view('back.dashboard', 
         compact('kategori','artikel','playlist','users','materi','postterbaru','playlistvideo','materivideo'));
     }
-    
 }

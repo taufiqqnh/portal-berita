@@ -83,7 +83,8 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slide = Slide::find($id);
+        return view('back.slide.edit', compact('slide'));
     }
 
     /**
@@ -95,7 +96,32 @@ class SlideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this-> validate($request, [
+            'judul_slide' => 'required|min:4',
+            'image' => 'mimes:png,jpg,jpeg,gif',
+        ]);
+
+        if(!empty($request->file('image'))){
+
+            $data= $request->all();
+            $data['image'] = $request->file('image')->store('slidebanner');
+
+            $slide = Slide::findOrFail($id);
+            Storage::delete($slide->image);
+            $slide->update($data);
+            Alert::success('Success', 'Berhasil Teredit!');
+        return redirect('/slide');
+            // ->with('success', 'Your data has been added!');
+        } else {
+            $data= $request->all();
+
+            $slide = Slide::findOrFail($id);
+            
+            $slide->update($data);
+            Alert::success('Success', 'Berhasil Teredit!');
+        return redirect('/slide');
+            // ->with('success', 'Your data has been added!');
+        }
     }
 
     /**

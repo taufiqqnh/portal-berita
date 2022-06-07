@@ -30,7 +30,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Judul</th>
-                                <th>Slug</th>
+                                {{-- <th>Slug</th> --}}
                                 <th>Kategori</th>
                                 <th>Author</th>
                                 <th>Gambar</th>
@@ -42,7 +42,7 @@
                             <tr>
                                 <td>{{$row->id}}</td>
                                 <td>{{$row->judul}}</td>
-                                <td>{{$row->slug}}</td>
+                                {{-- <td>{{$row->slug}}</td> --}}
                                 <td>{{$row->kategori->nama_kategori}}</td>
                                 <td>{{$row->users->name}}</td>
                                 <td>

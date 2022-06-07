@@ -30,6 +30,7 @@ use App\Http\Controllers\EditprofileController;
 Route::middleware(['guest'])->group(function(){
     Route::get('/', [FrontendController::class, 'index']);
     Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
+    Route::get('/search', [FrontendController::class, 'search'])->name('search');
 });
 // Front End
 

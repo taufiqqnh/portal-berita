@@ -14,6 +14,9 @@
             @foreach ($slide as $key => $row)
             <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
               <img src="{{asset('uploads/' .$row->image)}}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <a href="{{$row->link}}" target="__blank" class="badge bg-warning text-dark" style="text-decoration: none">Klik disini</a>
+              </div>        
             </div>           
             @endforeach
           </div>
@@ -30,7 +33,8 @@
       {{-- EndSlider --}}
 
       {{-- Card Artikel --}}
-      <div class="container">
+  
+      <div class="container" id="artikel">
       <h1 class="mt-4 text-center fw-bold">Artikel Berita</h1>
       <hr>
       <div class="row justify-content-center">
@@ -46,20 +50,15 @@
               </h5>
               <p class="card-text">{{ Str::limit(strip_tags($row->desc), 100) }}</p>
             </div>
-            {{-- <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul> --}}
             <div class="card-body">
-              <a href="{{route('detail-artikel', $row->slug)}}" class="btn btn-primary btn-sm">Go somewhere</a>
+              <a href="{{route('detail-artikel', $row->slug)}}" class="btn btn-primary btn-sm">Detail berita</a>
             </div>
             <div class="card-body">
               <a href="" class="badge bg-info text-dark" style="text-decoration: none">{{$row->users->name}}</a>
-              <a href="" class="badge bg-warning text-dark" style="text-decoration: none">{{$row->kategori->nama_kategori}}</a>
+              <a href="/search?kategori={{$row->kategori->nama_kategori}}" class="badge bg-warning text-dark" style="text-decoration: none">{{$row->kategori->nama_kategori}}</a>
             </div>
           </div>
-        </div>     
+        </div>
         @empty
             <p>Data Masih Kosong</p>
         @endforelse
@@ -67,7 +66,7 @@
     </div>
 
         {{-- Card Playlist--}}
-        <div class="container">
+        {{-- <div class="container">
           <h1 class="mt-4 text-center fw-bold">Playlist</h1>
           <hr>
           <div class="row justify-content-center">
@@ -86,10 +85,10 @@
                   <p>Data Masih Kosong</p>
               @endforelse
           </div>
-        </div>
+        </div> --}}
 
         {{-- Card Materi--}}
-      <div class="container">
+      {{-- <div class="container">
           <h1 class="mt-4 text-center fw-bold">Materi</h1>
           <hr>
           <div class="row justify-content-center">
@@ -111,5 +110,5 @@
           @empty
             <p>Data Masih Kosong</p>
           @endforelse
-      </div>
+      </div> --}}
 @endsection

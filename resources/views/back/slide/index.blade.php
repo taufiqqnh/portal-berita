@@ -53,7 +53,7 @@
                                 @endif
                             </td>
                             <td>
-                                {{-- <a class="btn btn-warning btn-sm " href="{{route('slide.edit', $row->id)}}"><i class="far fa-edit"></i></a> --}}
+                                <a class="btn btn-warning btn-sm " href="{{route('slide.edit', $row->id)}}"><i class="far fa-edit"></i></a>
                                 <form action="/slide/{{$row->id}}" method="POST" class="d-inline">
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">

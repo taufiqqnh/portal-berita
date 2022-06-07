@@ -11,6 +11,7 @@
                     <div class="detail-badge">
                         <a href="" class="badge bg-warning text-dark" style="text-decoration: none">{{$artikel->kategori->nama_kategori}}</a>
                         <a href="" class="badge bg-info text-dark" style="text-decoration: none">{{$artikel->users->name}}</a>
+                        <a href="" class="badge bg-success text-dark" style="text-decoration: none">{{$artikel->created_at}}</a>
                     </div>
                         <h2>{{$artikel->judul}}</h2>
                     <div class="detail-desc">

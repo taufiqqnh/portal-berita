@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            2021, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://instagram.com/taufiqqnh_" target="blank">Taufiq NurHidayat</a>
+            2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#" target="blank">Taufiq, Irvani & Mega</a>
         </div>				
     </div>
 </footer>

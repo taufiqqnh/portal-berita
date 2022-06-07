@@ -25,8 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="#"> 
-                    <img src="{{asset('asset/news.png')}}" width="30" height="30" class="d-inline-block align-top" alt="" >
-                    Portal Berita
+                    <img src="{{asset('back/img/udbnews.jpg')}}" width="120" height="40" class="d-inline-block align-top" alt="" >
                   </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

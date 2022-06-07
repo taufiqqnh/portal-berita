@@ -98,7 +98,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-6 col-md-3">
+		{{-- <div class="col-sm-6 col-md-3">
 			<div class="card card-stats card-round">
 				<div class="card-body">
 					<div class="row align-items-center">
@@ -117,9 +117,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
-	<div class="row">
+	{{-- <div class="row">
 		<div class="col-md-4">
 			<div class="card full-height h-100">
 				<div class="card-header">
@@ -144,24 +144,7 @@
 			  @empty
 					<p>Data Masih Kosong</p>
 			@endforelse
-			{{-- <div class="card full-height h-100">
-				<div class="card-header">
-					<div class="card-head-row">
-						<div class="card-title">Materi Video</div>
-					</div>
-				</div>
-					@forelse ($materivideo as $row)		
-					<div class="card">
-						<img src="{{asset('uploads/' .$row->image)}}" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">{{$row->judul_materi}}</h5>
-						  <p class="card-text">{!!$row->desc!!}</p>
-					</div>
-					</div>
-					@empty
-					<p>Data Masih Kosong</p>
-				   @endforelse
-			</div> --}}
+			
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -187,7 +170,7 @@
 			  </div>
 			  @empty
 					<p>Data Masih Kosong</p>
-			@endforelse
+			@endforelse --}}
 			{{-- <div class="card full-height h-100">
 				<div class="card-header">
 					<div class="card-head-row">
@@ -206,8 +189,8 @@
                 <p>Data Masih Kosong</p>
            	@endforelse
 			</div> --}}
-			</div>
-		</div>
+			{{-- </div>
+		</div> --}}
 		<div class="col-md-4">
 			<div class="card full-height h-100">
 			<div class="card-header">
