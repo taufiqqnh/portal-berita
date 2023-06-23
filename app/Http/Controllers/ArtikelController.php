@@ -31,7 +31,7 @@ class ArtikelController extends Controller
     public function create()
     {
         $kategori = Kategori::all();
-        return view('back.artikel.create',compact('kategori'));
+        return view('back.artikel.create', compact('kategori'));
     }
 
     /**
@@ -42,22 +42,22 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        $this-> validate($request, [
+        $this->validate($request, [
             'judul' => 'required|min:4',
         ]);
 
-        $data= $request->all();
-            $data['slug'] = Str::slug($request->input('judul'));
-            $data['user_id'] = Auth::id();
-            $data['views'] = 0;
-            $data['image'] = $request->file('image')->store('artikel');
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->input('judul'));
+        $data['user_id'] = Auth::id();
+        $data['views'] = 0;
+        $data['image'] = $request->file('image')->store('artikel');
         Artikel::create($data);
 
         Alert::success('Success', 'Berhasil Tersimpan!');
         return redirect('/artikel');
-            // ->with('success', 'Your data has been added!');
+        // ->with('success', 'Your data has been added!');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -80,7 +80,7 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
         $kategori = Kategori::all();
-        return view('back.artikel.edit', compact('artikel','kategori'));
+        return view('back.artikel.edit', compact('artikel', 'kategori'));
     }
 
     /**
@@ -96,35 +96,35 @@ class ArtikelController extends Controller
         //     'judul' => 'required|min:4',
         // ]);
 
-        if(empty($request->file('image'))){
+        if (empty($request->file('image'))) {
 
-            $artikel = Artikel::find($id); 
+            $artikel = Artikel::find($id);
             $artikel->update([
-            'judul' => $request->judul,
-            'slug' => Str::slug($request->input('judul')),
-            'desc' => $request->desc,
-            'kategori_id' => $request->kategori_id,
-            'user_id' => Auth::id(),
-            'is_active' => $request->is_active,
+                'judul' => $request->judul,
+                'slug' => Str::slug($request->input('judul')),
+                'desc' => $request->desc,
+                'kategori_id' => $request->kategori_id,
+                'user_id' => Auth::id(),
+                'is_active' => $request->is_active,
             ]);
             Alert::success('Success', 'Berhasil Teredit!');
-        return redirect('/artikel');
+            return redirect('/artikel');
             // ->with('success', 'Your data has been Updated!');
         } else {
-            $artikel = Artikel::find($id); 
+            $artikel = Artikel::find($id);
             Storage::delete($artikel->image);
             $artikel->update([
-            'judul' => $request->judul,
-            'slug' => Str::slug($request->input('judul')),
-            'desc' => $request->desc,
-            'kategori_id' => $request->kategori_id,
-            'user_id' => Auth::id(),
-            'is_active' => $request->is_active,
-            'image' => $request->file('image')->store('artikel'),
+                'judul' => $request->judul,
+                'slug' => Str::slug($request->input('judul')),
+                'desc' => $request->desc,
+                'kategori_id' => $request->kategori_id,
+                'user_id' => Auth::id(),
+                'is_active' => $request->is_active,
+                'image' => $request->file('image')->store('artikel'),
 
             ]);
             Alert::success('Success', 'Berhasil Teredit!');
-        return redirect('/artikel');
+            return redirect('/artikel');
             // ->with('success', 'Your data has been Updated!');
         }
     }
@@ -141,7 +141,7 @@ class ArtikelController extends Controller
         $artikel->delete();
 
         Alert::info('Success', 'Berhasil Terhapus');
-        return redirect ('/artikel');
+        return redirect('/artikel');
         // ->with('success', 'Your data has been Deleted!');
     }
 }

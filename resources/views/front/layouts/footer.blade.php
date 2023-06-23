@@ -65,7 +65,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" >
       © 2022 Copyright :
-      <a class="text-reset fw-bold" href="#" target="__blank">Taufiq, Irvani & Mega</a>
+      <a class="text-reset fw-bold" href="#" target="__blank">Taufiq NurHidayat</a>
     </div>
     <!-- Copyright -->
   </footer>

@@ -10,9 +10,9 @@ class Slide extends Model
     use HasFactory;
     protected $table = 'slide';
 
-    protected $fillable =[
-        'judul_slide','link','image','status'
+    protected $fillable = [
+        'judul_slide', 'link', 'image', 'status'
     ];
 
-    protected $hidden= [];
+    protected $hidden = [];
 }

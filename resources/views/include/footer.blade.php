@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#" target="blank">Taufiq, Irvani & Mega</a>
+            2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#" target="blank">Taufiq NurHidayat</a>
         </div>				
     </div>
 </footer>

@@ -12,19 +12,19 @@ class Artikel extends Model
     use HasFactory;
     protected $table = 'artikel';
 
-    protected $fillable =[
-        'judul','slug','desc','kategori_id','user_id','image','is_active','views'
+    protected $fillable = [
+        'judul', 'slug', 'desc', 'kategori_id', 'user_id', 'image', 'is_active', 'views'
     ];
 
-    protected $hidden= [];
-    
- public function kategori()
- {
-     return $this->belongsTo(Kategori::class, 'kategori_id','id');
- }
+    protected $hidden = [];
 
- public function users()
- {
-     return $this->belongsTo(User::class, 'user_id','id');
- }
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

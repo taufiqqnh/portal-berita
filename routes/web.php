@@ -27,7 +27,7 @@ use App\Http\Controllers\EditprofileController;
 // });
 
 // Front End
-Route::middleware(['guest'])->group(function(){
+Route::middleware(['guest'])->group(function () {
     Route::get('/', [FrontendController::class, 'index']);
     Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
     Route::get('/search', [FrontendController::class, 'search'])->name('search');
@@ -37,7 +37,7 @@ Route::middleware(['guest'])->group(function(){
 // Auth::routes();
 Auth::routes(['verify' => true]);
 // ADMIN
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/kategori', KategoriController::class);
     Route::resource('/artikel', ArtikelController::class);
@@ -48,4 +48,3 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/profile', EditprofileController::class);
 });
 // ADMIN
-
